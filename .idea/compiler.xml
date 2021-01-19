@@ -6,13 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="stone-ops" />
         <module name="stone-auth" />
-        <module name="stone-example" />
         <module name="stone-common" />
-        <module name="stone-service" />
-        <module name="stone-example-api" />
-        <module name="stone-service-api" />
         <module name="stone-gateway" />
       </profile>
     </annotationProcessing>
@@ -24,12 +19,12 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="stone-auth" options="-parameters" />
       <module name="stone-common" options="-parameters" />
-      <module name="stone-example" options="-parameters" />
-      <module name="stone-example-api" options="-parameters" />
+      <module name="stone-example" options="" />
+      <module name="stone-example-api" options="" />
       <module name="stone-gateway" options="-parameters" />
-      <module name="stone-ops" options="-parameters" />
-      <module name="stone-service" options="-parameters" />
-      <module name="stone-service-api" options="-parameters" />
+      <module name="stone-ops" options="" />
+      <module name="stone-service" options="" />
+      <module name="stone-service-api" options="" />
       <module name="untitled" options="-parameters" />
     </option>
   </component>

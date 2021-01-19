@@ -10,6 +10,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>stone-gateway</artifactId>
-
+    <name>${project.artifactId}</name>
+    <version>${stone.project.version}</version>
+    <packaging>jar</packaging>
 
 </project>
