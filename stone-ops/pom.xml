@@ -12,6 +12,9 @@
     <artifactId>stone-ops</artifactId>
     <name>${project.artifactId}</name>
     <version>${stone.project.version}</version>
+    <modules>
+        <module>stone-admin</module>
+    </modules>
     <packaging>pom</packaging>
     <description>stone 监控集合</description>
 
