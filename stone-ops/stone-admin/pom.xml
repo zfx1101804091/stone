@@ -52,6 +52,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
+
     </dependencies>
 
     <build>
@@ -90,7 +91,7 @@
                                 <!--suppress UnresolvedMavenProperty -->
                                 <copy overwrite="true"
                                       tofile="${session.executionRootDirectory}/target/${artifactId}.jar"
-                                      file="${project.build.directory}/${artifactId}.jar" />
+                                      file="${project.build.directory}/${artifactId}.jar"/>
                             </tasks>
                         </configuration>
                     </execution>
