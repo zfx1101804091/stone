@@ -11,7 +11,7 @@
 
     <artifactId>stone-example-api</artifactId>
     <name>${project.artifactId}</name>
-    <version>${stone.project.version}</version>
+    <version>1.0.0.SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>stone example api 微服务集合</description>
 
