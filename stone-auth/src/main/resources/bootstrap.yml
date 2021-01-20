@@ -13,7 +13,6 @@ spring:
   profiles:
     # 环境配置
     active: dev
-
   application:
     name: stone-auth
 
@@ -29,3 +28,33 @@ spring:
         file-extension: yml
         # 共享配置
         shared-dataids: application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+  # springboot-admin配置
+  boot:
+    admin:
+      client:
+        url: http://127.0.0.1:9001
+
+# 开启和暴露所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+    logfile:
+      enabled: true         #可在线查看日志
+
+########################################################
+### Log configuration
+### 方便Spring Boot Admin页面上实时查看日志
+### logback.xml中有详细的日志配置
+########################################################
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    root: ${LOG_LEVEL:INFO}
+    org.stone: info
+  #  方便Spring Boot Admin页面上实时查看日志
+  file: logs/${spring.application.name}/info.log

@@ -33,3 +33,17 @@ spring:
         file-extension: yml
         # 共享配置
         shared-dataids: application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+
+# include 暴露端点 (不暴露时)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    #  注释后 不显示 logfile 模块
+    logfile:
+      external-file: logs/${spring.application.name}/debug.log  #指向日志文件地址，需与LogBack配置的日志地址一致
+  # 在访问/actuator/health时显示完整信息
+  endpoint:
+    health:
+      show-details: always
