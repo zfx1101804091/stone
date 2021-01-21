@@ -1,19 +1,7 @@
 server:
   port: 9001
-#  undertow:
-#    # 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接, 默认设置每个CPU核心一个线程
-#    io-threads: 4
-#    # 阻塞任务线程池, 当执行类似servlet请求阻塞操作, undertow会从这个线程池中取得线程,它的值设置取决于系统的负载
-#    worker-threads: 20
-#    # 以下的配置会影响buffer,这些buffer会用于服务器连接的IO操作,有点类似netty的池化内存管理
-#    buffer-size: 1024
-#    # 是否分配的直接内存
-#    direct-buffers: true
-spring:
-  profiles:
-    # 环境配置
-    active: dev
 
+spring:
   application:
     name: stone-admin
   security:
@@ -32,18 +20,12 @@ spring:
         # 配置文件格式
         file-extension: yml
         # 共享配置
-        shared-dataids: application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+        # shared-dataids: application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
 
-# include 暴露端点 (不暴露时)
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-    #  注释后 不显示 logfile 模块
-    logfile:
-      external-file: logs/${spring.application.name}/debug.log  #指向日志文件地址，需与LogBack配置的日志地址一致
-  # 在访问/actuator/health时显示完整信息
-  endpoint:
-    health:
-      show-details: always
+  boot:
+    admin:
+      discovery:
+        ignored-services:
+          - consul
+          - serverAddr
+
