@@ -28,6 +28,7 @@ public class MyUserDetailsService implements UserDetailsService {
         Users users = userMapper.selectOne(queryWrapper.eq(Users::getUsername, username));
         if(users==null){
             //认证失败
+            throw new UsernameNotFoundException("用户名不存在！");
         }
         List<GrantedAuthority> auths = AuthorityUtils
                 .commaSeparatedStringToAuthorityList("role");
