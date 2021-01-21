@@ -1,0 +1,58 @@
+server:
+  undertow:
+    # 设置IO线程数, 它主要执行非阻塞的任务,它们会负责多个连接, 默认设置每个CPU核心一个线程
+    io-threads: 4
+    # 阻塞任务线程池, 当执行类似servlet请求阻塞操作, undertow会从这个线程池中取得线程,它的值设置取决于系统的负载
+    worker-threads: 20
+    # 以下的配置会影响buffer,这些buffer会用于服务器连接的IO操作,有点类似netty的池化内存管理
+    buffer-size: 1024
+    # 是否分配的直接内存
+    direct-buffers: true
+
+spring:
+  application:
+    name: stone-security
+
+  cloud:
+    nacos:
+      discovery:
+        # 服务注册地址
+        server-addr: 127.0.0.1:8848
+      config:
+        # 配置中心地址
+        server-addr: 127.0.0.1:8848
+        # 配置文件格式
+        file-extension: yml
+        # 共享配置
+        # shared-dataids: application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+  # springboot-admin配置
+#  boot:
+#    admin:
+#      client:
+#        url: http://127.0.0.1:9001
+
+# 开启和暴露所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+    logfile:
+      enabled: true         #可在线查看日志
+
+########################################################
+### Log configuration
+### 方便Spring Boot Admin页面上实时查看日志
+### logback.xml中有详细的日志配置
+########################################################
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    root: ${LOG_LEVEL:INFO}
+    org.stone: info
+  #  方便Spring Boot Admin页面上实时查看日志
+  file:
+    name: logs/${spring.application.name}/info.log

@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="stone-gateway" />
         <module name="stone-admin" />
         <module name="stone-auth" />
         <module name="stone-common" />
         <module name="stone-spring-security" />
-        <module name="stone-gateway" />
         <module name="stone-web" />
       </profile>
     </annotationProcessing>
@@ -20,16 +20,16 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="stone-admin" options="" />
-      <module name="stone-auth" options="" />
-      <module name="stone-common" options="" />
+      <module name="stone-admin" options="-parameters" />
+      <module name="stone-auth" options="-parameters" />
+      <module name="stone-common" options="-parameters" />
       <module name="stone-example" options="" />
       <module name="stone-example-api" options="" />
-      <module name="stone-gateway" options="" />
+      <module name="stone-gateway" options="-parameters" />
       <module name="stone-ops" options="" />
       <module name="stone-service" options="" />
       <module name="stone-service-api" options="" />
-      <module name="stone-spring-security" options="" />
+      <module name="stone-spring-security" options="-parameters" />
       <module name="stone-web" options="-parameters" />
     </option>
   </component>
