@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="stone-gateway" />
         <module name="stone-admin" />
         <module name="stone-auth" />
         <module name="stone-common" />
         <module name="stone-spring-security" />
+        <module name="stone-gateway" />
         <module name="stone-web" />
       </profile>
     </annotationProcessing>
