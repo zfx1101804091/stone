@@ -21,6 +21,7 @@ public class MyUserDetailsService implements UserDetailsService {
     @Resource
     UserMapper userMapper;
 
+    //根据账号查询用户信息
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         //根据用户名查询数据库

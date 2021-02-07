@@ -13,8 +13,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import javax.annotation.Resource;
 
 @Configuration
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
+    //定义用户信息（查询数据库）
     @Resource
     UserDetailsService userDetailsService;
 
@@ -23,11 +24,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
        auth.userDetailsService(userDetailsService).passwordEncoder(password());
     }
 
+    //密码编码器
     @Bean
     PasswordEncoder password(){
         return new BCryptPasswordEncoder();
     }
 
+    //安全拦截机制
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.formLogin()    //自定义登录页面
