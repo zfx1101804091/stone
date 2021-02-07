@@ -6,9 +6,9 @@ import lombok.experimental.Accessors;
 
 @Data
 @Accessors(chain = true)
-@TableName("user")
+@TableName("stone_user")
 public class Users {
-    private Integer id;
+    private Long id;
     private String username;
     private String password;
 }
