@@ -6,17 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="stone-common" />
-        <module name="stone-auth" />
         <module name="stone-admin" />
-        <module name="stone-web" />
+        <module name="stone-auth" />
+        <module name="stone-spring-security" />
         <module name="stone-gateway" />
+        <module name="stone-common" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="stone-web" target="1.8" />
-      <module name="untitled" target="1.8" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8" />
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -29,8 +26,7 @@
       <module name="stone-ops" options="" />
       <module name="stone-service" options="" />
       <module name="stone-service-api" options="" />
-      <module name="stone-web" options="-parameters" />
-      <module name="untitled" options="-parameters" />
+      <module name="stone-spring-security" options="-parameters" />
     </option>
   </component>
 </project>

@@ -9,10 +9,8 @@ server:
     buffer-size: 1024
     # 是否分配的直接内存
     direct-buffers: true
+
 spring:
-  profiles:
-    # 环境配置
-    active: dev
   application:
     name: stone-auth
 
@@ -27,7 +25,7 @@ spring:
         # 配置文件格式
         file-extension: yml
         # 共享配置
-        shared-dataids: application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+        # shared-dataids: application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
   # springboot-admin配置
   boot:
     admin:
@@ -57,4 +55,5 @@ logging:
     root: ${LOG_LEVEL:INFO}
     org.stone: info
   #  方便Spring Boot Admin页面上实时查看日志
-  file: logs/${spring.application.name}/info.log
+  file:
+    name: logs/${spring.application.name}/info.log

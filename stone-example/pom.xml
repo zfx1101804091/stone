@@ -11,7 +11,10 @@
 
     <artifactId>stone-example</artifactId>
     <name>${project.artifactId}</name>
-    <version>${stone.project.version}</version>
+    <version>1.0.0.SNAPSHOT</version>
+    <modules>
+        <module>stone-spring-security</module>
+    </modules>
     <packaging>pom</packaging>
     <description>stone example 微服务集合</description>
 

@@ -29,6 +29,7 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
 
+
         <!-- SpringCloud Ailibaba Nacos Config -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
@@ -41,7 +42,7 @@
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
         </dependency>
 
-        <!-- SpringBoot Web -->
+        <!--Spring-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -53,53 +54,25 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!--<plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>${docker.plugin.version}</version>
-                <configuration>
-                    <imageName>${docker.registry.url}/blade/${project.artifactId}:${project.version}</imageName>
-                    <dockerDirectory>${project.basedir}</dockerDirectory>
-                    <dockerHost>${docker.registry.host}</dockerHost>
-                    <resources>
-                        <resource>
-                            <targetPath>/</targetPath>
-                            <directory>${project.build.directory}</directory>
-                            <include>${project.build.finalName}.jar</include>
-                        </resource>
-                    </resources>
-                    <registryUrl>${docker.registry.url}</registryUrl>
-                    <serverId>${docker.registry.url}</serverId>
-                    <pushImage>true</pushImage>
-                </configuration>
-            </plugin>-->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <tasks>
-                                <!--suppress UnresolvedMavenProperty -->
-                                <copy overwrite="true"
-                                      tofile="${session.executionRootDirectory}/target/${artifactId}.jar"
-                                      file="${project.build.directory}/${artifactId}.jar"/>
-                            </tasks>
-                        </configuration>
-                    </execution>
-                </executions>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
